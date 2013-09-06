@@ -1,6 +1,8 @@
-module.exports.compute = (votes, mandateCount) ->
+module.exports.compute = (votes, mandateCount, options = {}) ->
     mandates = votes.map -> 0
     mandatesAwarded = 0
+    if options.voteAccessor
+        votes .= map that
     while mandatesAwarded < mandateCount
         winningIndex = getRoundWinner votes, mandates
         mandates[winningIndex]++
