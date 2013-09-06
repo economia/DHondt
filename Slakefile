@@ -5,7 +5,7 @@ require! {
 }
 option 'testFile' 'File in (/lib or /test) to run test on' 'FILE'
 
-task \test ({testFile}) ->
+task \test ({testFile = 'src/dhondt.ls'}) ->
     relativeAddress = testFile.replace __dirname, '' .substr 1
 
     [srcOrTest, ...fileAddress] = relativeAddress.split /[\\\/]/
