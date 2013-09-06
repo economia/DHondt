@@ -1,7 +1,6 @@
 require! {
     child_process.exec
     fs
-    async
 }
 option 'testFile' 'File in (/lib or /test) to run test on' 'FILE'
 
