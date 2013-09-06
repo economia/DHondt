@@ -1,13 +1,19 @@
-module.exports.compute = (votes, mandateCount, options = {}) ->
-    mandates = votes.map -> 0
+module.exports.compute = (partyArray, mandateCount, options = {}) ->
+    mandates = partyArray.map -> 0
     mandatesAwarded = 0
-    if options.voteAccessor
-        votes .= map that
+    votes =
+        | options.voteAccessor => partyArray.map that
+        | otherwise            => partyArray
+    if options.resultProperty then partyArray.forEach -> it[that] = 0
     while mandatesAwarded < mandateCount
         winningIndex = getRoundWinner votes, mandates
         mandates[winningIndex]++
+        if options.resultProperty then partyArray[winningIndex][that]++
         mandatesAwarded++
-    mandates
+
+    switch
+    | options.resultProperty => partyArray
+    | otherwise              => mandates
 
 getRoundWinner = (votes, mandates) ->
     highestIndex = -1
