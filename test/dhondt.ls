@@ -53,3 +53,8 @@ describe \DHondt ->
         expect parties.2.result .to.equal 1
         expect parties.3.result .to.equal 0
 
+    test 'should be able to compute with custom base dividers (typ. 1.42)' ->
+        votes = [100 60 45]
+        mandates = 2
+        result = dhondt.compute votes, mandates, base: 1.42
+        expect result .to.eql [2 0 0]
