@@ -1,26 +1,30 @@
 {
-    "name": "dhondt",
-    "description": "Utility to compute number of mandates based on election results, uting D'Hondt method",
-    "main": "./lib/dhondt",
-    "author": "Economia, a.s. <marcel.sulek@economia.cz>",
-    "version": "0.1.0",
-    "repository" : {
-        "type" : "git",
-        "url" : "https://github.com/economia/DHondt.git"
-    },
-    "bugs" : {
-        "url" : "https://github.com/economia/DHondt/issues"
-    },
-    "keywords": [
-        "dhondt",
-        "hondt",
-        "election"
-    ],
-    "license" : "MIT",
-    "devDependencies": {
-        "expect.js": "0.2.x"
-    },
-    "scripts": {
-        "test": "slake test"
-    }
+  "name": "dhondt",
+  "version": "0.1.0",
+  "description": "Utility to compute number of mandates based on election results, uting D'Hondt method",
+  "main": "./lib/dhondt",
+  "directories": {
+    "test": "test",
+    "lib": "lib"
+  },
+  "devDependencies": {
+    "expect.js": "~0.2.x"
+  },
+  "scripts": {
+    "test": "slake test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/economia/DHondt.git"
+  },
+  "keywords": [
+    "dhondt",
+    "hondt",
+    "election"
+  ],
+  "author": "Economia, a.s. <marcel.sulek@economia.cz>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/economia/DHondt/issues"
+  }
 }
